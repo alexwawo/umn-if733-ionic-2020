@@ -1,0 +1,110 @@
+<ion-app>
+  <ion-menu side="end" menuId="studentsMenu" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          UMN Students
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          <ion-label>All Students</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="card" slot="start"></ion-icon>
+          <ion-label>My Advisees</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-menu side="start" menuId="m1" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          UMN BnB
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Discover Places</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/places/tabs/offers">
+            <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+            <ion-label>Your Bookings</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" (click)="onLogout()" button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none">
+            <ion-icon name="star" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Recipes</h2>
+              <p>
+                Karena Recipes dan Places<br />
+                berada dalam satu<br />
+                app/project Ionic,<br />
+                maka left side drawer<br/>
+                dijadikan satu.
+              </p>
+            </ion-label>
+<!--            <p>Karena Recipes dan Places berada dalam satu app/project Ionic, dan tidak bisa ada 2 Side Drawer yang berbeda.. jadi Side Drawer untuk Recipes dan Places saya jadikan 1.</p>-->
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/recipes/tabs/discover">
+            <ion-icon name="restaurant-outline" slot="start"></ion-icon>
+            <ion-label>Discover Recipes</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/recipes/tabs/creations">
+            <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+            <ion-label>My Creations</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+<!--  <ion-menu side="start" menuId="recipesMenu">-->
+<!--    <ion-header>-->
+<!--      <ion-toolbar>-->
+<!--        <ion-title>UMN Recipes</ion-title>-->
+<!--      </ion-toolbar>-->
+<!--    </ion-header>-->
+<!--    <ion-content>-->
+<!--      <ion-list>-->
+<!--        <ion-menu-toggle menu="recipesMenu">-->
+<!--          <ion-item lines="none" routerLink="/recipes/tabs/discover">-->
+<!--            <ion-icon name="restaurant-outline" slot="start"></ion-icon>-->
+<!--            <ion-label>Discover Recipes</ion-label>-->
+<!--          </ion-item>-->
+<!--        </ion-menu-toggle>-->
+<!--        <ion-menu-toggle menu="recipesMenu">-->
+<!--          <ion-item lines="none" routerLink="/recipes/tabs/creations">-->
+<!--            <ion-icon name="checkbox-outline" slot="start"></ion-icon>-->
+<!--            <ion-label>My Creations</ion-label>-->
+<!--          </ion-item>-->
+<!--        </ion-menu-toggle>-->
+<!--      </ion-list>-->
+<!--    </ion-content>-->
+<!--  </ion-menu>-->
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

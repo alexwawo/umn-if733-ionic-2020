@@ -1,0 +1,46 @@
+const inputNama = document.querySelector('#input-nama');
+const inputJumlah = document.querySelector('#input-jumlah');
+const btnHapus = document.querySelector('#btn-hapus');
+const btnTambah = document.querySelector('#btn-tambah');
+const listPengeluaran = document.querySelector('#list-pengeluaran');
+const totalPengeluaran = document.querySelector('#total-pengeluaran');
+const alertCtrl = document.querySelector('ion-alert-controller');
+
+let total = 0;
+
+totalPengeluaran.textContent = total;
+
+const clear = () => {
+    inputJumlah.value = null;
+    inputNama.value = null;
+}
+
+async function presentAlert() {
+    await alertCtrl.componentOnReady();
+
+    const alert = await alertCtrl.create({
+        header: 'Terjadi Kesalahan',
+        message: 'Mohon masukkan nama dan jumlah pengeluaran.',
+        buttons: ['Tutup']
+    });
+    return alert.present();
+}
+
+btnTambah.addEventListener('click', () => {
+    const nama = inputNama.value;
+    const jumlah = inputJumlah.value;
+    if (nama.trim().length <= 0 || jumlah.trim().length <= 0 || jumlah <= 0) {
+        presentAlert();
+        return;
+    }
+    else {
+        const tambahan = document.createElement('ion-item');
+        tambahan.textContent = nama + ': Rp. ' + jumlah + ',00';
+        listPengeluaran.appendChild(tambahan);
+        total += +jumlah;
+        totalPengeluaran.textContent = total;
+        clear();
+    }
+});
+
+btnHapus.addEventListener('click', clear);

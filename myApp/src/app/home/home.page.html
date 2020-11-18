@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item routerLink="/recipes">Recipes</ion-item>
+    <ion-item routerLink="/students">Students</ion-item>
+    <ion-item routerLink="/contacts">Contacts</ion-item>
+    <ion-item routerLink="/places">Places</ion-item>
+  </ion-list>
+  <app-home-component [judul]="title" [isi]="salam"></app-home-component>
+</ion-content>

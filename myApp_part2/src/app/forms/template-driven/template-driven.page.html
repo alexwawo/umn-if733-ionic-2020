@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Template Driven Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nama</ion-label>
+        <ion-input type="text"
+                   ngModel
+                   required
+                   #nama="ngModel"
+                   name="nama"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="nama.invalid && nama.touched">
+        <ion-label>Nama tidak boleh kosong.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email"
+                   ngModel
+                   email
+                   required
+                   #emailHaha="ngModel"
+                   name="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!emailHaha.valid && emailHaha.touched">
+        <ion-label>Alamat email harus valid.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"
+                   ngModel
+                   #passwordCtrl="ngModel"
+                   required
+                   minlength="6"
+                   name="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+        <ion-label>Password minimal 6 karakter.</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit"
+                color="primary"
+                [disabled]="f.invalid"
+                expand="block">Simpan</ion-button>
+  </form>
+</ion-content>

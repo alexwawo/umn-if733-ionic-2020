@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+    <link
+      href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css"
+      rel="stylesheet"
+    />
+    <title>Budget Planner</title>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Budget Planner</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>
+                    Input Pengeluaran
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="floating">Nama Pengeluaran</ion-label>
+                    <ion-input type="text" id="input-nama"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating"
+                      >Jumlah Pengeluaran</ion-label
+                    >
+                    <ion-input type="number" id="input-jumlah"></ion-input>
+                  </ion-item>
+                  <div margin-vertical text-right>
+                    <ion-button fill="outline" color="danger" id="btn-hapus">
+                      <!-- <ion-icon slot="start" name="close"></ion-icon> -->
+                      Delete
+                    </ion-button>
+                    <ion-button id="btn-tambah">
+                      <ion-icon slot="start" name="add"></ion-icon>
+                      Tambah
+                    </ion-button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-list id="list-pengeluaran"></ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <p margin>Total Pengeluaran : Rp. <span id="total-pengeluaran"></span>,00</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+      <ion-alert-controller></ion-alert-controller>
+    </ion-app>
+    <script src="app.js"></script>
+  </body>
+</html>
